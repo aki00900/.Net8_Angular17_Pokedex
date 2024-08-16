@@ -23,10 +23,10 @@ This project demonstrates the integration of a robust backend API, developed in 
 
 ## Features
 
-- **Comprehensive Pokémon Data**: Displays detailed information for each Pokémon, including types, regions, and Pokédex numbers.
-- **Database Integration**: Seamless interaction with a SQL Server database to retrieve and manage Pokémon data.
-- **Responsive Design**: Ensures a consistent experience across various devices.
-- **Swagger UI**: Provides an interactive interface to explore and test backend APIs.
+- ** Comprehensive Pokémon Data **: Displays detailed information for each Pokémon, including types, regions, and Pokédex numbers.
+- ** Database Integration **: Seamless interaction with a SQL Server database to retrieve and manage Pokémon data.
+- ** Responsive Design **: Ensures a consistent experience across various devices.
+- ** Swagger UI **: Provides an interactive interface to explore and test backend APIs.
 
 ## Getting Started
 
@@ -42,32 +42,32 @@ Ensure you have the following installed:
 
 ### Backend Setup
 
-1. **Clone the Repository**:  
+1. ** Clone the Repository **:  
    Clone this repository to your local machine.
    
-2. **Open in Visual Studio**:  
+2. ** Open in Visual Studio **:  
    Navigate to the `MyWebApp` folder and open it in Visual Studio.
 
-3. **Build the Project**:  
+3. ** Build the Project **:  
    Restore dependencies and build the project.
 
-4. **Run the Backend**:  
+4. ** Run the Backend **:  
    Start the `MyWebApp` project. This will launch the backend server and open the Swagger UI at:  
    `http://localhost:{PORT}/swagger`  
    Use the Swagger UI to interact with the available API endpoints.
 
 ### Frontend Setup
 
-1. **Navigate to Angular Project**:  
+1. ** Navigate to Angular Project **:  
    Open the `Angular17Client` folder in Visual Studio Code.
 
-2. **Install Dependencies**:  
+2. ** Install Dependencies **:  
    Open a terminal, navigate to the `src` directory, and run:
    ```bash
    npm install
    ```
 
-3. **Run the Frontend**:  
+3. ** Run the Frontend **:  
    Start the Angular application by running:
    ```bash
    ng serve
