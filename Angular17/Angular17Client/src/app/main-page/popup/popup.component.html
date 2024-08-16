@@ -1,0 +1,57 @@
+<h1 mat-dialog-title style="text-transform: capitalize; font-weight: bold; font-size: 2.0em; text-align: center; grid-column: 1 / span 3;">
+    {{data.pokemon.name}}
+</h1>
+
+<div mat-dialog-content style="display: grid; grid-auto-rows: 1fr; grid-template-columns: 1fr 1fr 1fr;">
+    <div></div>
+    <p style="font-weight: bold; font-size: 1.8em; text-align: left; grid-column: 1 / span 3;">Moves</p>
+        @for (move of data.pokemon.moves; track $index) {
+            <div>{{move.move.name}}</div>
+        }
+        @empty {
+            <p>This pokemon has no moves</p>
+        }
+    </div>
+    <div>
+        <!-- <br>
+        <p style="font-weight: bold; font-size: 1.8em; text-align: left; grid-column: 1 / span 3;">Types</p>
+        <div style="grid-column: 1 / span 3; display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 2px;">
+            @for (type of data.pokemon.types; track $index) {
+                <div style="margin: 0; padding: 2px; text-align: left;">{{type.type.name}}</div>
+            }
+        </div> -->
+    <div>
+        <br> <br>
+        @if (showBackShiny) {
+            <img src={{data.pokemon.sprites.back_shiny}}>
+            <button mat-button (click)="hideBackShiny()">Hide Shiny Butt</button>
+        }
+        @else {
+            <button mat-button (click)="setBackShiny()">Show Shiny Butt</button>
+        }
+        <!-- @switch(showShiny) {
+            @case (true){
+                <div>Show shiny is true</div>
+            }
+            @case (false){
+                <div>Show shiny is false</div>
+            }
+        } -->
+        
+        @if (showFrontShiny) {
+            <img src={{data.pokemon.sprites.front_shiny}}>
+            <button mat-button (click)="hideFrontShiny()">Hide Front Side</button>
+        }
+        @else {
+            <button mat-button (click)="setFrontShiny()">Show Front Side</button>
+        }
+
+
+
+        
+
+</div>
+<div></div>
+<mat-dialog-actions align="end"> <!--defer with tirgger--> 
+    <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Close</button>
+</mat-dialog-actions>

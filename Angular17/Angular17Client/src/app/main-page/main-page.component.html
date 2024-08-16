@@ -1,0 +1,218 @@
+<table 
+  style="
+    background-color: #f0f0f0; /* Light gray background for the table */
+    width: 100%; /* Full width */
+    border-collapse: collapse; /* Collapse borders for a clean look */
+    font-family: 'Arial', sans-serif; /* Clean font */
+    border: 2px solid #000; /* Black border around the table */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  " 
+  mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="Name">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef 
+      style="
+        background-color: #f7d02c; /* Pokémon yellow */
+        color: #3d7dca; /* Pokémon blue text */
+        padding: 12px; /* Padding around text */
+        text-align: center; /* Align text to the left */
+        font-weight: bold; /* Bold text */
+        font-size: 18px; /* Larger font size for header */
+      "> 
+      Name 
+    </th>
+    <td 
+      mat-cell 
+      *matCellDef="let pokemon"
+      style="
+        padding: 10px; /* Padding around text */
+        text-align: center; /* Align text to the left */
+        color: #000; /* Black text */
+        font-size: 16px; /* Font size for better readability */
+      ">
+      {{ pokemon.name }}
+    </td>
+  </ng-container>
+
+  <!-- Picture Column -->
+  <ng-container matColumnDef="Picture">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef 
+      style="
+        background-color: #f7d02c; /* Pokémon yellow */
+        color: #3d7dca; /* Pokémon blue text */
+        padding: 12px; /* Padding around text */
+        text-align: center; /* Align text to the left */
+        font-weight: bold; /* Bold text */
+        font-size: 18px; /* Larger font size for header */
+      "> 
+      Picture 
+    </th>
+    <td 
+      mat-cell 
+      *matCellDef="let pokemon"
+      style="
+        padding: 10px; /* Padding around content */
+        text-align: center; /* Center content */
+      ">
+      <img 
+        src="{{pokemon.frontImg}}" 
+        alt="Pokemon image" 
+        style="
+          max-width: 100px; /* Limit image width */
+          border-radius: 8px; /* Round image corners */
+          border: 3px solid #3d7dca; /* Blue border around image */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow around image */
+        ">
+    </td>
+  </ng-container>
+
+  <!-- Type Column -->
+  <ng-container matColumnDef="Type">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef 
+      style="
+        background-color: #f7d02c; /* Pokémon yellow */
+        color: #3d7dca; /* Pokémon blue text */
+        padding: 12px; /* Padding around text */
+        text-align: left; /* Align text to the left */
+        font-weight: bold; /* Bold text */
+        font-size: 18px; /* Larger font size for header */
+      "> 
+      Type 
+    </th>
+    <td 
+      mat-cell 
+      *matCellDef="let pokemon"
+      style="
+        padding: 10px; /* Padding around text */
+        text-align: left; /* Align text to the left */
+        color: #3d7dca; /* Pokémon blue text */
+        font-size: 16px; /* Font size for better readability */
+        font-weight: bold; /* Bold text */
+      ">
+      {{ pokemon.pokemonType }}
+    </td>
+  </ng-container>
+
+  <!-- Pokedex Number Column -->
+  <ng-container matColumnDef="PokedexNumber">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef 
+      style="
+        background-color: #f7d02c; /* Pokémon yellow */
+        color: #3d7dca; /* Pokémon blue text */
+        padding: 12px; /* Padding around text */
+        text-align: left; /* Align text to the left */
+        font-weight: bold; /* Bold text */
+        font-size: 18px; /* Larger font size for header */
+      "> 
+      Pokedex Number 
+    </th>
+    <td 
+      mat-cell 
+      *matCellDef="let pokemon"
+      style="
+        padding: 10px; /* Padding around text */
+        text-align: left; /* Align text to the left */
+        color: #555; /* Dark gray text */
+        font-size: 16px; /* Font size for better readability */
+      ">
+      {{ pokemon.pokedexNumber }}
+    </td>
+  </ng-container>
+
+  <!-- Region Column -->
+  <ng-container matColumnDef="Region">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef 
+      style="
+        background-color: #f7d02c; /* Pokémon yellow */
+        color: #3d7dca; /* Pokémon blue text */
+        padding: 12px; /* Padding around text */
+        text-align: left; /* Align text to the left */
+        font-weight: bold; /* Bold text */
+        font-size: 18px; /* Larger font size for header */
+      "> 
+      Region 
+    </th>
+    <td 
+      mat-cell 
+      *matCellDef="let pokemon"
+      style="
+        padding: 10px; /* Padding around text */
+        text-align: left; /* Align text to the left */
+        color: #777; /* Light gray text */
+        font-size: 16px; /* Font size for better readability */
+      ">
+      {{pokemon.regionName}}
+    </td>
+  </ng-container>
+
+  <!-- Popup Button Column -->
+  <ng-container matColumnDef="popup">
+    <th 
+      mat-header-cell 
+      *matHeaderCellDef 
+      style="
+        background-color: #f7d02c; /* Pokémon yellow */
+        color: #3d7dca; /* Pokémon blue text */
+        padding: 12px; /* Padding around text */
+      ">
+    </th>
+    <td 
+      mat-cell 
+      *matCellDef="let pokemon"
+      style="
+        padding: 10px; /* Padding around content */
+        text-align: center; /* Center content */
+      ">
+      <button 
+        style="
+          background-color: #f7d02c; /* Pokémon yellow */
+          color: #3d7dca; /* Pokémon blue text */
+          border: 2px solid #3d7dca; /* Blue border */
+          padding: 12px 24px; /* Add padding */
+          text-align: center; /* Center text */
+          text-decoration: none; /* Remove underline */
+          display: inline-block; /* Align with text */
+          font-size: 16px; /* Increase font size */
+          border-radius: 8px; /* Round corners */
+          transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+          cursor: pointer; /* Change cursor to pointer */
+          font-weight: bold; /* Bold text */
+        " 
+        onmouseover="this.style.backgroundColor='#f5a623'; this.style.transform='scale(1.05)';" 
+        onmouseout="this.style.backgroundColor='#f7d02c'; this.style.transform='scale(1)';"
+        onfocus="this.style.boxShadow='0 0 0 3px rgba(61, 125, 202, 0.5)';" 
+        onblur="this.style.boxShadow='none';"
+        (click)="openPopup(pokemon)">
+        Show Pokemon Info
+      </button>
+    </td>
+  </ng-container>
+
+  <!-- Header and Row Definitions -->
+  <tr 
+    mat-header-row 
+    *matHeaderRowDef="displayedColumns"
+    style="
+      background-color: #3d7dca; /* Pokémon blue */
+      color: white; /* White text */
+    ">
+  </tr>
+  <tr 
+    mat-row 
+    *matRowDef="let row; columns: displayedColumns;"
+    style="
+      border-bottom: 1px solid #ddd; /* Add a border between rows */
+    ">
+  </tr>
+</table>
