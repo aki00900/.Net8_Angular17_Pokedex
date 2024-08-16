@@ -125,11 +125,3 @@ You can populate the database manually using SQL scripts or interact with it thr
 ## Contributing
 
 Contributions are welcome! Feel free to fork this repository, make your changes, and submit a pull request. Please ensure your changes are well-documented and tested.
-```
-
-### Troubleshooting Tips:
-- **Bold Text**: Ensure there are no extra spaces between `**` and the text.
-- **Hyperlinks**: The syntax `[text](URL)` should be correct and placed without any additional spaces.
-- **GitHub Rendering**: If the Markdown is not rendering correctly on GitHub, try viewing it in another Markdown editor or checking for any GitHub-specific syntax requirements.
-
-Let me know if you continue to face issues!
