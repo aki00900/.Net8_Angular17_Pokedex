@@ -1,27 +1,41 @@
 
 ```markdown
-# Pokédex Web App
+# Pokédex Web Application
 
-This project is a small Pokédex-like single webpage application built with .NET 8 and Angular 17. It includes a database system that stores information about various Pokémon and their attributes. The backend handles the API and data management, while the frontend displays the information in a user-friendly manner.
+Welcome to the **Pokédex Web Application**, a modern single-page application (SPA) that provides detailed information about various Pokémon. Built using **.NET 8** for the backend and **Angular 17** for the frontend, this application also integrates a SQL Server database to store and manage Pokémon data efficiently.
 
-## Project Structure
+## Table of Contents
 
-- **Backend:** .NET 8 project located in the `MyWebApp` folder.
-- **Frontend:** Angular 17 project located in the `Angular17Client` folder.
-- **Database:** SQL Server is used for creating tables and storing Pokémon data.
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Backend Setup](#backend-setup)
+  - [Frontend Setup](#frontend-setup)
+  - [Running the Application](#running-the-application)
+- [Database Setup](#database-setup)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Project Overview
+
+This project demonstrates the integration of a robust backend API, developed in .NET 8, with a dynamic and responsive Angular 17 frontend. The backend manages data using SQL Server and exposes endpoints via a Swagger UI, while the frontend consumes these APIs to display Pokémon information in an engaging and interactive format.
 
 ## Features
 
-- Display a list of Pokémon with their details.
-- Integration with a database to fetch and display Pokémon information.
-- Responsive design to ensure compatibility across different devices.
-- Swagger UI to interact with the backend API.
+- **Comprehensive Pokémon Data**: Displays detailed information for each Pokémon, including types, regions, and Pokédex numbers.
+- **Database Integration**: Seamless interaction with a SQL Server database to retrieve and manage Pokémon data.
+- **Responsive Design**: Ensures a consistent experience across various devices.
+- **Swagger UI**: Provides an interactive interface to explore and test backend APIs.
 
 ## Getting Started
 
-Follow these steps to run the project locally.
+To get started with the project locally, follow these instructions.
 
 ### Prerequisites
+
+Ensure you have the following installed:
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 - [Node.js and npm](https://nodejs.org/) (for Angular)
@@ -29,53 +43,55 @@ Follow these steps to run the project locally.
 
 ### Backend Setup
 
-1. Clone the repository to your local machine.
-2. Open the `.NET` project located in the `MyWebApp` folder using Visual Studio.
-3. Build the project to restore dependencies.
-4. Run the `MyWebApp` project. This will start the backend server and open the Swagger UI.
-   - Swagger URL: `http://localhost:{PORT}/swagger`
-   - The Swagger UI displays the available controllers and endpoints for the API.
+1. **Clone the Repository**:  
+   Clone this repository to your local machine.
+   
+2. **Open in Visual Studio**:  
+   Navigate to the `MyWebApp` folder and open it in Visual Studio.
+
+3. **Build the Project**:  
+   Restore dependencies and build the project.
+
+4. **Run the Backend**:  
+   Start the `MyWebApp` project. This will launch the backend server and open the Swagger UI at:  
+   `http://localhost:{PORT}/swagger`  
+   Use the Swagger UI to interact with the available API endpoints.
 
 ### Frontend Setup
 
-1. Navigate to the `Angular17Client` folder.
-2. Open the folder in Visual Studio Code.
-3. In the terminal, navigate to the `src` directory:
-   ```bash
-   cd Angular17Client/src
-   ```
-4. Install the necessary npm packages:
+1. **Navigate to Angular Project**:  
+   Open the `Angular17Client` folder in Visual Studio Code.
+
+2. **Install Dependencies**:  
+   Open a terminal, navigate to the `src` directory, and run:
    ```bash
    npm install
    ```
-5. Run the Angular application:
+
+3. **Run the Frontend**:  
+   Start the Angular application by running:
    ```bash
    ng serve
    ```
-6. Open your browser and navigate to the provided localhost URL (typically `http://localhost:4200`).
+   Access the application at `http://localhost:4200` in your browser.
 
 ### Running the Application
 
-To run the complete application, follow these steps:
+To run the complete application:
 
-1. **Backend:**
+1. **Backend**:  
    - Open the `MyWebApp` folder in Visual Studio.
-   - Run the `MyWebApp` project to start the backend server.
-   - The backend will start and open the Swagger UI, where you can interact with the API endpoints.
+   - Start the backend server. Swagger UI will be available for API interaction.
 
-2. **Frontend:**
+2. **Frontend**:  
    - Open the `Angular17Client` folder in Visual Studio Code.
    - Navigate to the `src` directory in the terminal.
-   - Run the command `ng serve` to start the Angular frontend.
-   - Open your browser and navigate to `http://localhost:4200` to view the functional webpage.
+   - Run `ng serve` to launch the frontend.
+   - Access the live application at `http://localhost:4200`.
 
-### Database Setup
+## Database Setup
 
-The database schema includes tables for Pokémon and their attributes such as Type and Region. You can set up the database manually using SQL Server Management Studio (SSMS) or automate it through migrations.
-
-#### Sample SQL Command
-
-Here's a sample SQL command to create the Pokémon table:
+The application uses SQL Server for managing Pokémon data. Below is a sample SQL command to create the Pokémon table:
 
 ```sql
 CREATE TABLE Pokemon (
@@ -89,25 +105,25 @@ CREATE TABLE Pokemon (
 );
 ```
 
-You can insert data into the table using SQL scripts or directly through the API.
+You can populate the database manually using SQL scripts or interact with it through the API.
 
 ## Troubleshooting
 
 ### Common Issues
 
-1. **HTTPS Development Certificate on macOS:**
-   If you encounter issues with the HTTPS development certificate on macOS, try the following steps:
-   - Manually import the certificate into the keychain.
-   - Adjust keychain permissions.
-   - Run relevant commands with `sudo`.
-   - Reset the keychain if necessary.
+- **HTTPS Development Certificate on macOS**:  
+  If you encounter issues with the HTTPS development certificate on macOS, consider the following steps:
+  - Manually import the certificate into the keychain.
+  - Adjust keychain permissions.
+  - Execute relevant commands with `sudo`.
+  - Reset the keychain if needed.
 
-2. **SQL Server on Docker:**
-   If you're using an M1 Mac and having trouble running SQL Server on Docker, you can start the container with the following command:
-   ```bash
-   docker run -e "ACCEPT_EULA=1" -e "SA_PASSWORD=MyStrongPass123" -p 1433:1433 -d --name sql_server mcr.microsoft.com/mssql/server
-   ```
+- **SQL Server on Docker (M1 Mac)**:  
+  If running SQL Server on Docker on an M1 Mac, use this command to start the container:
+  ```bash
+  docker run -e "ACCEPT_EULA=1" -e "SA_PASSWORD=MyStrongPass123" -p 1433:1433 -d --name sql_server mcr.microsoft.com/mssql/server
+  ```
 
 ## Contributing
 
-Feel free to fork the repository and make changes. Pull requests are welcome!
+Contributions are welcome! Feel free to fork this repository, make your changes, and submit a pull request. Please ensure your changes are well-documented and tested.
