@@ -16,7 +16,6 @@ Welcome to the **Pokédex Web Application**, a modern single-page application (S
 - [Database Setup](#database-setup)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Project Overview
 
